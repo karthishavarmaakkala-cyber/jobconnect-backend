@@ -22,15 +22,18 @@ public class DataInitializer {
                     Role recruiterRole = Role.values().length > 1 ? Role.values()[1] : applicantRole;
 
                     User applicant = new User();
+                    applicant.setFullName("Job Seeker");
                     applicant.setEmail("user@jobconnect.com");
                     applicant.setPassword("123456");
                     applicant.setRole(applicantRole);
                     userRepository.save(applicant);
 
                     User recruiter = new User();
+                    recruiter.setFullName("Recruiter Manager");
                     recruiter.setEmail("recruiter@jobconnect.com");
                     recruiter.setPassword("123456");
                     recruiter.setRole(recruiterRole);
+                    recruiter.setCompanyName("JobConnect");
                     userRepository.save(recruiter);
 
                     System.out.println("--> Seeded default users: user@jobconnect.com / recruiter@jobconnect.com");
